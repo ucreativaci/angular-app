@@ -34,9 +34,19 @@ pipeline {
             }
         }
 
-         stage('Deploy') {
+         stage('Deploy to dev') {
 
-             when {anyOf { branch "dev" , "prod" } }
+             when {branch 'dev' }
+        
+            steps {
+                bat 'xcopy %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%'
+           }
+            
+        }
+
+          stage('Deploy to prod') {
+
+             when {branch 'prod' }
         
             steps {
                 bat 'xcopy %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%'
