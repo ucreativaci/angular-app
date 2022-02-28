@@ -37,13 +37,7 @@ pipeline {
          stage('Deploy') {
         
             steps {
-                script { 
-                    if (env.BRANCH_NAME != 'prod') {
-                        bat 'echo should deploy'
-                    } else {
-                        bat 'echo do nothing.'
-                    }
-                }
+               bat "echo Deplyoing"
            }
             
         }
