@@ -36,12 +36,10 @@ pipeline {
 
          stage('Deploy') {
 
-             when {
-                 branch 'prod'
-             }
+             when {anyOf { branch "dev" , "prod" } }
         
             steps {
-               bat '"move %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%"'
+                bat 'xcopy %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%'
            }
             
         }
