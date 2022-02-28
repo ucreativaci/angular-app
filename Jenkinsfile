@@ -41,7 +41,7 @@ pipeline {
              }
         
             steps {
-               bat '"move %CD%/dist/clase6 C:/inetpub/wwwroot/marco/env.BRANCH_NAME"'
+               bat '"move %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%"'
            }
             
         }
