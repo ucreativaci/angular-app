@@ -35,9 +35,13 @@ pipeline {
         }
 
          stage('Deploy') {
+
+             when {
+                 branch 'prod'
+             }
         
             steps {
-               bat "echo Deplyoing"
+               bat '"move %CD%/dist/clase6 C:/inetpub/wwwroot/marco/env.BRANCH_NAME"'
            }
             
         }
