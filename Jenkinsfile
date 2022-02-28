@@ -42,7 +42,7 @@ pipeline {
                         bat "echo move %CD%\dist\clase-6 C:\inetpub\wwwroot\marco\env.BRANCH_NAME"
                         bat "move %CD%\dist\clase-6 C:\inetpub\wwwroot\marco\env.BRANCH_NAME"
                     } else {
-                  
+                        bat "echo do nothing."
                     }
                 }
            }
