@@ -39,7 +39,7 @@ pipeline {
              when {branch 'dev' }
         
             steps {
-                bat 'xcopy %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME%'
+                bat 'xcopy %CD%/dist/clase6 C:/inetpub/wwwroot/marco/%BRANCH_NAME% /s /y'
            }
             
         }
