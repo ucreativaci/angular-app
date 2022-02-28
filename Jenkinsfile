@@ -38,11 +38,10 @@ pipeline {
         
             steps {
                 script { 
-                    if (env.BRANCH_NAME != 'dev' && env.BRANCH_NAME != 'prod') {
-                        bat "echo move %CD%\dist\clase-6 C:\inetpub\wwwroot\marco\env.BRANCH_NAME"
-                        bat "move %CD%\dist\clase-6 C:\inetpub\wwwroot\marco\env.BRANCH_NAME"
+                    if (env.BRANCH_NAME != 'prod') {
+                        bat 'echo should deploy'
                     } else {
-                        bat "echo do nothing."
+                        bat 'echo do nothing.'
                     }
                 }
            }
