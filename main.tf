@@ -10,8 +10,8 @@ terraform {
 # Configuramos el provider para AWS
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIAQ6QB4DZSG3PTT4P4"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 # Creamos el bucket
