@@ -3,10 +3,6 @@ pipeline {
         label "windows-worker"
     }
 
-    environment {
-        AWS_SECRET_KEY = credentials("aws-secret-key")
-        AWS_ACCESS_KEY = credentials("aws-access-key")
-    }
     stages {
         stage('Angular Verification') {
             steps {
