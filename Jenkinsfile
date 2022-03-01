@@ -9,31 +9,21 @@ pipeline {
             }
         }
         
-        stage('Dependencies Installation') {
+        stage('Initialize Terraform'){
             steps {
-                bat "npm install"
+                bat "terraform init"
             }
         }
-        stage('Lint Test Execution') {
+
+        stage('Create Infrastructure AWS Terraform'){
             steps {
-                bat "ng lint"
+                bat "terraform apply --auto-approve"
             }
         }
-        /*
-        stage('Unit Test Execution') {
+
+        stage('Deploy to AWS S3'){
             steps {
-                bat "ng test"
-            }
-        }*/
-        stage('Build Execution') {
-            steps {
-                bat "ng build"
-            }
-        }
-        
-        stage('Deploy Application') {
-            steps {
-                bat "xcopy dist\\clase6 C:\\inetpub\\wwwroot\\romell\\prod /s /y"
+                bat "aws s3 cp C:\\inetpub\\wwwroot\\romell\\dev s3://my-tf-test-bucket-clase7-ucreativa --recursive"
             }
         }
     }
